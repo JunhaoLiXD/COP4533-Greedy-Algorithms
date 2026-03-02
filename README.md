@@ -16,11 +16,11 @@ This repository contains the implementation for a COP4533 Greedy Algorithms prog
   - `io_utils.py` : Provides helper functions for reading input files and writing output files.
 
 - `inputs/` : Example input files for testing cache policies
-  - `input_file1.txt` : Sample request sequence input.
+  - `example_input.txt` : Sample request sequence input.
   - `bad_sequence.txt` : Example bad sequence demonstrating OPTFF outperforming other policies.
 
 - `outputs/` : Generated program outputs
-  - `output_file1.txt` : Example output produced by running the simulator.
+  - `example_output.txt` : Example output produced by running the simulator.
 
 - `scripts/` : Helper scripts for generating and testing inputs
   - `generate_inputs.py` : Generates random input files following the required assignment format.
