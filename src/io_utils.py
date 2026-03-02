@@ -1,4 +1,4 @@
-from typing import List, Tuple
+from typing import List, Tuple, Optional
 
 def read_input_file(filepath: str) -> Tuple[int, int, List[int]]:
     """
@@ -43,4 +43,37 @@ def read_input_file(filepath: str) -> Tuple[int, int, List[int]]:
 
     except FileNotFoundError:
         raise FileNotFoundError(f"Cannot open file: {filepath}")
-    
+
+
+def write_output_file(
+    filepath: str,
+    fifo_misses: Optional[int],
+    lru_misses: Optional[int],
+    optff_misses: Optional[int],
+) -> None:
+    """
+    Write cache miss results to an output file using the required format.
+
+    Args:
+        filepath (str): Path to the output file.
+        fifo_misses (Optional[int]): Number of cache misses produced by the 
+                                     FIFO policy. If None, the FIFO result is not written.
+        lru_misses (Optional[int]): Number of cache misses produced by the 
+                                    LRU policy. If None, the LRU result is not written.
+        optff_misses (Optional[int]): Number of cache misses produced by the 
+                                      OPTFF policy. If None, the OPTFF result is not written.
+
+    Output format:
+        FIFO : <number_of_misses>
+        LRU  : <number_of_misses>
+        OPTFF: <number_of_misses>
+    """
+    with open(filepath, "w") as f:
+        if fifo_misses is not None:
+            f.write(f"FIFO : {fifo_misses}\n")
+
+        if lru_misses is not None:
+            f.write(f"LRU  : {lru_misses}\n")
+
+        if optff_misses is not None:
+            f.write(f"OPTFF: {optff_misses}\n")
