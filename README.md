@@ -68,9 +68,9 @@ The program writes cache miss counts to an output file.
 
 Each line reports the number of misses for one cache replacement policy:
 
-    FIFO:  <number_of_misses>
-    LRU:   <number_of_misses>
-    OPTFF: <number_of_misses>
+    FIFO  : <number_of_misses>
+    LRU   : <number_of_misses>
+    OPTFF : <number_of_misses>
 
 ### Example Output
 
@@ -195,7 +195,7 @@ We construct a new algorithm A′ that behaves exactly like A, except at this st
 After this change:
 
 - A keeps p but not q.
-- A′keeps q but not p.
+- A′ keeps q but not p.
 
 Since OPTFF chose p as the page used farthest in the future, the next request to q occurs before the next request to p.
 
