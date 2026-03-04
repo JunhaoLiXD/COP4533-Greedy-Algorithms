@@ -29,17 +29,12 @@ def main() -> None:
     optff_misses = optff(k, m, requests)
 
     # Print the output (Optional)
-    print(f"FIFO : {fifo_misses}")
-    print(f"LRU : {lru_misses}")
+    print(f"FIFO  : {fifo_misses}")
+    print(f"LRU   : {lru_misses}")
     print(f"OPTFF : {optff_misses}")
 
-    # Write output file
-    write_output_file(
-        output_file,
-        fifo_misses=None,
-        lru_misses=None,
-        optff_misses=optff_misses,
-    )
+    # Write to output file
+    write_output_file(output_file, fifo_misses, lru_misses, optff_misses)
 
 if __name__ == "__main__":
     main()

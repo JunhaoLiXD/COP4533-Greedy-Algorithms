@@ -1,1 +1,3 @@
-OPTFF: 11
+FIFO  : 15
+LRU   : 15
+OPTFF : 11
