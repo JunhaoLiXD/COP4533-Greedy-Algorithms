@@ -2,7 +2,7 @@ from typing import List
 from collections import deque
 
 def fifo(capacity, m, requests):
-    if k <= 0:
+    if capacity <= 0:
         raise ValueError("Cache capacity must be greater than 0.")
     if m != len(requests):
         raise ValueError("Number of requests must match the length of the requests list.")
