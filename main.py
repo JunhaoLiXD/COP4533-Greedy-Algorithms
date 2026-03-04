@@ -3,8 +3,8 @@ import sys
 from src.io_utils import read_input_file, write_output_file
 
 from src.OPTFF import optff
-# from src.FIFO import fifo
-# from src.LRU import lru
+from src.FIFO import fifo
+from src.LRU import lru
 
 def main() -> None:
     """
@@ -24,13 +24,13 @@ def main() -> None:
     k, m, requests = read_input_file(input_file)
 
     # Run algorithms
-    # fifo_misses = fifo(k, m, requests)
-    # lru_misses = lru(k, m, requests)
+    fifo_misses = fifo(k, m, requests)
+    lru_misses = lru(k, m, requests)
     optff_misses = optff(k, m, requests)
 
     # Print the output (Optional)
-    # print(f"FIFO : {fifo_misses}")
-    # print(f"LRU : {lru_misses}")
+    print(f"FIFO : {fifo_misses}")
+    print(f"LRU : {lru_misses}")
     print(f"OPTFF : {optff_misses}")
 
     # Write output file
